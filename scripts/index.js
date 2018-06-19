@@ -234,7 +234,7 @@ const testMockData = {
 // TEST IT! Grab an example API response and send it into the function - make sure
 // you get back the object you want.
 const decorateResponse = function(response) {
-  const results = response.items.map( item => ({
+  return response.items.map( item => ({
     id: item.id.videoId ,
     title: item.snippet.title,
     thumbnail: item.snippet.thumbnails.medium.url,
@@ -242,8 +242,8 @@ const decorateResponse = function(response) {
   }));
 };
 
-decorateResponse(testMockData);
-
+const movies = decorateResponse(testMockData);
+console.log(movies);
 
 // TASK:
 // 1. Create a `generateVideoItemHtml` function that receives the decorated object
@@ -251,7 +251,18 @@ decorateResponse(testMockData);
 // TEST IT!
 const generateVideoItemHtml = function(video) {
 
+  return `
+  <li data-id ="${video.id}">
+    <h3>${video.title}</h3>
+    <img src="${video.thumbnail}">
+  </li>
+  `;
 };
+
+generateVideoItemHtml(movies[0]);
+
+
+
 
 // TASK:
 // 1. Create a `addVideosToStore` function that receives an array of decorated video
