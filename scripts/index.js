@@ -14,7 +14,9 @@ const API_KEY = 'AIzaSyBiu6JSRAXnUUKnObW03_-xQGq_dzwBLYI';
   }
 */
 const store = {
-  videos: []
+  videos: [],
+  //searchTerm: '',
+  
 };
 
 // TASK: Add the Youtube Search API Base URL here:
@@ -40,187 +42,6 @@ const fetchVideos = function(searchTerm, callback) {
 
 
 
-const testMockData = {
-  'kind': 'youtube#searchListResponse',
-  'etag': '"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/sQ4QXJhFZSrhqhUAHVfSpmVC1yo"',
-  'nextPageToken': 'CAUQAA',
-  'regionCode': 'US',
-  'pageInfo': {
-    'totalResults': 1000000,
-    'resultsPerPage': 5
-  },
-  'items': [
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/cx96QgLLWZH_JxHSfGIB_8-HdN0"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'aJOTlE1K90k'
-      },
-      'snippet': {
-        'publishedAt': '2018-05-31T04:00:00.000Z',
-        'channelId': 'UCN1hnUccO4FD5WfM7ithXaw',
-        'title': 'Maroon 5 - Girls Like You ft. Cardi B',
-        'description': '"Girls Like You” is out now. http://smarturl.it/GLY For more, visit: https://www.facebook.com/maroon5 https://twitter.com/maroon5 ...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/aJOTlE1K90k/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/aJOTlE1K90k/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/aJOTlE1K90k/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'Maroon5VEVO',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/ulL-tpAufZnNIZL4PSN_KeE1H_c"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'Y7ix6RITXM0'
-      },
-      'snippet': {
-        'publishedAt': '2014-06-24T04:00:01.000Z',
-        'channelId': 'UCN1hnUccO4FD5WfM7ithXaw',
-        'title': 'Maroon 5 - Maps (Lyric Video)',
-        'description': 'Maroon 5 - Maps (Lyric) Buy Now! http://smarturl.it/M5Maps Sign up for updates: http://smarturl.it/Maroon5.News Best of Maroon 5: https://goo.gl/8n9iCm ...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/Y7ix6RITXM0/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/Y7ix6RITXM0/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/Y7ix6RITXM0/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'Maroon5VEVO',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/0qCcVsRBFkaTaurWmbcpzgeay04"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': '60ItHLz5WEA'
-      },
-      'snippet': {
-        'publishedAt': '2015-12-04T07:00:30.000Z',
-        'channelId': 'UCJrOtniJ0-NWz37R30urifQ',
-        'title': 'Alan Walker - Faded',
-        'description': 'Listen to ”Faded” on Spotify: http://bit.ly/faded_spotify Listen to ”Faded” via other plattforms: https://AlanWalker.lnk.to/faded Merch available at ...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/60ItHLz5WEA/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/60ItHLz5WEA/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/60ItHLz5WEA/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'Alan Walker',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/dKkxepWFurm5rlz-coG8BOdUFcA"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'IHNzOHi8sJs'
-      },
-      'snippet': {
-        'publishedAt': '2018-06-15T09:00:05.000Z',
-        'channelId': 'UCOmHUn--16B90oW2L6FRR3A',
-        'title': 'BLACKPINK - ‘뚜두뚜두 (DDU-DU DDU-DU)’ M/V',
-        'description': 'Download on iTunes @ http://smarturl.it/BP_SquareUp/itunes Download on AppleMusic @ http://smarturl.it/BP_SquareUp/applemusic Available on Spotify ...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/IHNzOHi8sJs/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/IHNzOHi8sJs/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/IHNzOHi8sJs/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'BLACKPINK',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/1szGxIC2JpHOZayLDDyWY1wRMRg"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'VRJmcxCrAOA'
-      },
-      'snippet': {
-        'publishedAt': '2018-01-22T22:55:24.000Z',
-        'channelId': 'UCRijo3ddMTht_IHyNSNXpNQ',
-        'title': 'Real Life Trick Shots 2 | Dude Perfect',
-        'description': 'Trick shots should be an everyday thing! Thanks to Kay Jewelers for sponsoring this video! Win Valentine\'s Day by going to http://dudeperfect.com/KayJewelers ...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/VRJmcxCrAOA/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/VRJmcxCrAOA/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/VRJmcxCrAOA/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'Dude Perfect',
-        'liveBroadcastContent': 'none'
-      }
-    }
-  ]
-};
-
-
-
-
 
 
 // TASK:
@@ -240,8 +61,8 @@ const decorateResponse = function(response) {
   }));
 };
 
-const movies = decorateResponse(testMockData);
-console.log(movies);
+//const movies = decorateResponse(testMockData);
+//console.log(movies);
 
 // TASK:
 // 1. Create a `generateVideoItemHtml` function that receives the decorated object
@@ -269,10 +90,10 @@ const generateVideoItemHtml = function(video) {
 // TEST IT!
 const addVideosToStore = function(videos) {
   store.videos = videos;
-  console.log(store.videos);
+  //console.log(store.videos);
 };
 
-addVideosToStore(movies);
+//addVideosToStore(movies);
 // TASK:
 // 1. Create a `render` function
 // 2. Map through `store.videos`, sending each `video` through your `generateVideoItemHtml`
@@ -286,7 +107,7 @@ const render = function() {
   console.log(queuedVideos);
   $('.results').html(queuedVideos);
 };
-render();
+//render();
 // TASK:
 // 1. Create a `handleFormSubmit` function that adds an event listener to the form
 // 2. The listener should:
@@ -299,11 +120,37 @@ render();
 //   g) Inside the callback, run the `render` function
 // TEST IT!
 const handleFormSubmit = function() {
+  $('#js-search-form').submit(function(event) {
+  //$('#search-term').click('submit', function(){
+    event.preventDefault();
+    console.log('handleSubmit ran');
+    const newSearchTerm = $('#search-term').val();
+    //console.log(newSearch);
+    $('#search-term').val('');
+    //console.log($('#search-term').val(''));
+    //  $('#search-term').val('');
+    //this.val() = [];
+    fetchVideos(newSearchTerm, function(response){
+      //const newDecorated = decorateResponse(response);
+      const videosLoad =  decorateResponse();
+      //console.log(videos);>
+      //console.log(decorateResponse());
+      //console.log(newDecorated);>
+      addVideosToStore(videosLoad);
+      console.log(store.videos);
+      render();
+    });
+
+
+  });
 
 };
+//handleFormSubmit('ice');
 
 // When DOM is ready:
 $(function () {
   // TASK:
   // 1. Run `handleFormSubmit` to bind the event listener to the DOM
+  handleFormSubmit();
+  render();
 });
