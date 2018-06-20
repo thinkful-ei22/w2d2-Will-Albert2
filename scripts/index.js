@@ -35,12 +35,11 @@ const fetchVideos = function(searchTerm, callback) {
     key: API_KEY,
     q: searchTerm,
   };
-  $.getJSON(BASE_URL, query, (response) => {
-    console.log(response);
-  });
+  $.getJSON(BASE_URL, query, callback
+  );
 };
 
-
+console.log('Current Version');
 
 
 
@@ -132,7 +131,7 @@ const handleFormSubmit = function() {
     //this.val() = [];
     fetchVideos(newSearchTerm, function(response){
       //const newDecorated = decorateResponse(response);
-      const videosLoad =  decorateResponse();
+      const videosLoad =  decorateResponse(response);
       //console.log(videos);>
       //console.log(decorateResponse());
       //console.log(newDecorated);>
